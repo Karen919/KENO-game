@@ -1,0 +1,79 @@
+body {
+    background: url(/img/Free\ Vector\ _\ Bokeh\ lights\ effect\ on\ dark\ background.jpeg);
+    padding-top: 20px;
+}
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.num_ul {
+    width: 530px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.634);
+    border-radius: 20px;
+    margin-top: 10px;
+}
+.num_li {
+    width: 42px;
+    height: 42px;
+    background-color: blueviolet;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+    font-size: x-large;
+    cursor: pointer;
+    
+}
+
+.win_div {
+    width: 530px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(13, 14, 13, 0.838);
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.win_num_ul {
+        width: 420px;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 20px;
+        padding: 9px;
+        margin: 10px;
+}
+
+.win_num_li {
+    width: 32px;
+    height: 32px;
+    margin: 3px;
+    border-radius: 30px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+}
+
+.winNumber {
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 55px;
+    margin-left: 6px;
+    font-size: xx-large;
+
+}
