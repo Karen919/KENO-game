@@ -62,7 +62,7 @@
     border-radius: 20px;
     background-color: rgba(0, 128, 0, 0.633);
     color: aliceblue;
-    font-size: x-large;
+    font-size: large;
     cursor: pointer;
 }
 
@@ -77,6 +77,7 @@
     justify-content: center;
     padding: 10px;
     margin-top: 3px;
+    
 }
 .coins {
     color: aliceblue;
@@ -84,4 +85,8 @@
     padding: 2px;
     font-size: x-large;
     
+}
+
+.boxNumber {
+    background-color: black;
 }
