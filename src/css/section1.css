@@ -24,7 +24,22 @@ body {
 .num_li {
     width: 42px;
     height: 42px;
-    background-color: blueviolet;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3px;
+    font-size: x-large;
+    cursor: pointer;
+    
+}
+.reset_num_li {
+    width: 42px;
+    height: 42px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -37,7 +52,7 @@ body {
 .click_num_li {
     width: 42px;
     height: 42px;
-    background-color: rgb(64, 207, 28);
+    background-color: rgb(17, 100, 4);
     color: rgb(0, 0, 0);
     border-radius: 10px;
     display: flex;
@@ -66,6 +81,7 @@ body {
         border-radius: 20px;
         padding: 9px;
         margin: 10px;
+        display: none;
 }
 
 .win_num_li {

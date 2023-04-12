@@ -43,6 +43,18 @@
     border-radius: 44px;
 }
 
+.current_betting_li_win {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: large;
+    background-color: rgb(34, 195, 37);
+    border-radius: 44px;
+}
+
 
 .material-symbols-outlined {
   font-variation-settings:
