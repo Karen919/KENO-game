@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
   const demoUniqueNumberArr = [];
