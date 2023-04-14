@@ -1,13 +1,14 @@
 body {
-    background: url(/img/Jackpot\ screens\ for\ Beefee\ casino.jpeg) ;
-    background-size: cover;
-    padding-top: 20px;
+    background: url(/img/Jackpot\ screens\ for\ Beefee\ casino.jpeg) ; 
+     background-size: cover;
+    /* background-color: rgb(53, 62, 67); */
+    padding: 10px;
 }
 .App {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .num_ul {
@@ -17,9 +18,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: 7px;
     background-color: rgba(0, 0, 0, 0.634);
     border-radius: 20px;
-    margin-top: 10px;
 }
 .num_li {
     width: 42px;

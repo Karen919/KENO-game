@@ -1,72 +1,70 @@
+import { useEffect } from 'react';
 import './App.css';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
 function App() {
+  const demoUniqueNumberArr = [];
   const numbersBoxs = [];  
   for (let i = 1; i<=80; i++) {numbersBoxs.push(i)};
-  const demoUniqueNumberArr = [];
-  for ( let i = 0; i<100; i++) { demoUniqueNumberArr[i]=Math.floor(Math.random() *80)}
-  let returnUiqueNumber = null; 
-  let returnSelected = null;
+  let x = null;
+  const [start,setStart] =useState(<button className="start_btn" id='start' onClick={addBet} >Կատարել խաղադրույք</button> );
   const [bidDefault, setBidDefault] = useState(0);
-  const [selectedNumAddCurrentBet,setSelectedNumAddCurrentBet]=  useState()
-  const [box,SetBox] = useState(numbersBoxs.map((value,index)=><li key={index} className='num_li'  onClick={ (event) =>event.target.className="click_num_li"}>{value}</li>))
+  const [selectedNumAddCurrentBet,setSelectedNumAddCurrentBet]=  useState();
+  const [box,SetBox] = useState(numbersBoxs.map((value,index)=> <li key={index} className='num_li'  onClick={ (event) => {x++;x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է')} }>{value}</li>))
+  function alertInfo (color, text) {
+    document.getElementById('alerInfo').style.background = color
+    document.getElementById('alerInfo').style.transform = 'translateX(-550px)';
+    document.getElementById('alerInfo').innerText = text
+    setTimeout(()=>{document.getElementById('alerInfo').style.transform = 'translateX(0px)'},1300);
+  }
 
-function start() {
+  function addBet() {
+  x = null;
+  for ( let i = 0; i<100; i++) { demoUniqueNumberArr[i]=Math.floor(Math.random() *79)+1};
   const demoUniqueNumberArrFilter = demoUniqueNumberArr.filter( (value, index) => demoUniqueNumberArr.indexOf(value) === index ); 
   const demoUniqueNumberArrSlice = demoUniqueNumberArrFilter.slice(0,20);
   const uniqueNumbers = demoUniqueNumberArrSlice.filter( (value, index) => demoUniqueNumberArrSlice.indexOf(value) === index);
   const demoSelected = Array.from(document.getElementsByClassName('click_num_li'));
-  const selected = demoSelected.map( (value,index) => Number(value.textContent))
-  const selcetedSliece = selected.slice(0,8)
+  const selected = demoSelected.map( (value,index) => Number(value.textContent));
+  const selcetedSliece = selected.slice(0,8);
   const demoWiningNumbers = [...uniqueNumbers, ...selcetedSliece];
-  const winingNumbers = demoWiningNumbers.filter((value,index) => demoWiningNumbers.indexOf(value) !== index)
+  const winingNumbers = demoWiningNumbers.filter((value,index) => demoWiningNumbers.indexOf(value) !== index);
+  setStart(<button className="start_btn" id='start'>Կատարել խաղադրույք</button> );
+  localStorage.setItem('i', winingNumbers.length);
 
-  SetBox(numbersBoxs.map( (value, index) => {
-    if (uniqueNumbers.some(num=> num === value)) {
-      returnUiqueNumber =< li key={index} className='glow-on-hover'>{value}</li>;
-        } else if (uniqueNumbers.some(num=> num !== value)){
-      returnUiqueNumber =< li key={index} className='reset_num_li' >{value}</li>; }
-      return returnUiqueNumber
-      }));
-
-  setSelectedNumAddCurrentBet( 
-    selcetedSliece.map( (value,index) => {
-      if (winingNumbers.some(num => num === value)) {
-        returnSelected = <li key={index} className='glow-on-hover' >{value}</li>;
-          } else {
-            returnSelected =  <li key={index} className='current_betting_li' >{value}</li>;
-                  }
-        return returnSelected
-      }))}
-  useEffect(()=>{
-    setTimeout(()=>{
+  setTimeout(()=>{
       setSelectedNumAddCurrentBet(0)
       SetBox(numbersBoxs.map((value,index)=>{
-        return <li key={index} className='num_li'  onClick={ (event) => { event.target.className="click_num_li"}}>{value}</li>;
-          }))
-        },4000)
+        return <li key={index} className='num_li' onClick={ (event) => {x++; x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է')}}>
+          {value}</li>;}))
+      setStart(<button className="start_btn" id='start' onClick={addBet}>Կատարել խաղադրույք</button> )
+      document.getElementById('alerInfo').style.transform = 'translateX(0px)'
+    },8000);
+  SetBox(numbersBoxs.map( (value, index) => uniqueNumbers.some(num=> num === value) ? < li key={index} className='glow-on-hover'>{value}</li> : < li key={index} className='reset_num_li' >{value}</li>));
+  setSelectedNumAddCurrentBet(selcetedSliece.map( (value,index) => winingNumbers.some(num => num === value) ? <li key={index} className='glow-on-hover' >{value}</li> : <li key={index} className='reset_num_li' >{value}</li>))};
+  useEffect(()=>{
+    if ( localStorage.getItem('i') < '3' ) {
+      alertInfo('#1C2833','Կրկին Փորձել')
+      } else if (localStorage.getItem('i') >= '3' ) {
+        alertInfo('green',` military_tech  Դուք շահեցիք  ${2 * bidDefault}`)
+      }
   },[selectedNumAddCurrentBet])
-  
+
   return (
     <div className="App">
       <div className='console'>
+      <h1 id='alerInfo' className='alert_lose material-symbols-outlined'> </h1>
         <h1 className='current_betting_h1'>Ընթացիկ խաղադրույք</h1>
         <div className='betting_console_conteiner' >
           <ul className='current_betting_ul' id='selctedUl'>{selectedNumAddCurrentBet}</ul>
-          <p>{`դրույք- ${bidDefault}`}</p>
         </div>
       </div>
-  <div>
-                                           {/* numbersBoxSection */}
     <div>
       <ul className="num_ul">{box}</ul>
     </div>
-                                           {/* startSection */}
     <div className="start">
       <div className="coin_conteiner">
-        <p className="coins">{5000- bidDefault}</p>
+        <p className="coins">{localStorage.getItem('name')}</p>
       </div>
       <div className="startConteiner">
         <div className="bid">
@@ -81,14 +79,10 @@ function start() {
             <button className="bids_all" onClick={() => setBidDefault( bidDefault +250)}>+250</button>
           </div>
         </div>
-        <button className="start_btn" id='start' onClick={start} >Կատարել խաղադրույք</button>
+        {start}
       </div>
     </div>
   </div>
-  <div className='console'  id='alert'>
-    <h1 className='coin'>{`${ bidDefault} Fun` }</h1>
-  </div>
-</div>
   );
 }
 export default App;
