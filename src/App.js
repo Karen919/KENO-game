@@ -7,10 +7,10 @@ function App() {
   const numbersBoxs = [];  
   for (let i = 1; i<=80; i++) {numbersBoxs.push(i)};
   let x = null;
-  const [start,setStart] =useState(<button className="start_btn" id='start' onClick={addBet} >Կատարել խաղադրույք</button> );
+  const [start,setStart] =useState(<button className="start_btn" id='start' onClick={addBet} >START</button> );
   const [bidDefault, setBidDefault] = useState(0);
   const [selectedNumAddCurrentBet,setSelectedNumAddCurrentBet]=  useState();
-  const [box,SetBox] = useState(numbersBoxs.map((value,index)=> <li key={index} className='num_li'  onClick={ (event) => {x++;x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է')} }>{value}</li>))
+  const [box,SetBox] = useState(numbersBoxs.map((value,index)=> <li key={index} className='num_li'  onClick={ (event) => {x++;x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է 8')} }>{value}</li>))
   function alertInfo (color, text) {
     document.getElementById('alerInfo').style.background = color
     document.getElementById('alerInfo').style.transform = 'translateX(-550px)';
@@ -29,15 +29,15 @@ function App() {
   const selcetedSliece = selected.slice(0,8);
   const demoWiningNumbers = [...uniqueNumbers, ...selcetedSliece];
   const winingNumbers = demoWiningNumbers.filter((value,index) => demoWiningNumbers.indexOf(value) !== index);
-  setStart(<button className="start_btn" id='start'>Կատարել խաղադրույք</button> );
+  setStart(<button className="start_btn" id='start'>START</button> );
   localStorage.setItem('i', winingNumbers.length);
 
   setTimeout(()=>{
-      setSelectedNumAddCurrentBet(0)
+      setSelectedNumAddCurrentBet()
       SetBox(numbersBoxs.map((value,index)=>{
-        return <li key={index} className='num_li' onClick={ (event) => {x++; x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է')}}>
+        return <li key={index} className='num_li' onClick={ (event) => {x++; x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է 8')}}>
           {value}</li>;}))
-      setStart(<button className="start_btn" id='start' onClick={addBet}>Կատարել խաղադրույք</button> )
+      setStart(<button className="start_btn" id='start' onClick={addBet}>START</button> )
       document.getElementById('alerInfo').style.transform = 'translateX(0px)'
     },8000);
   SetBox(numbersBoxs.map( (value, index) => uniqueNumbers.some(num=> num === value) ? < li key={index} className='glow-on-hover'>{value}</li> : < li key={index} className='reset_num_li' >{value}</li>));
@@ -46,7 +46,17 @@ function App() {
     if ( localStorage.getItem('i') < '3' ) {
       alertInfo('#1C2833','Կրկին Փորձել')
       } else if (localStorage.getItem('i') >= '3' ) {
-        alertInfo('green',` military_tech  Դուք շահեցիք  ${2 * bidDefault}`)
+        alertInfo('green',` military_tech  Դուք շահեցիք  ${5 * bidDefault}`)
+      }else if (localStorage.getItem('i') >= '4' ) {
+        alertInfo('green',` military_tech  Դուք շահեցիք  ${10 * bidDefault}`)
+      }else if (localStorage.getItem('i') >= '5' ) {
+        alertInfo('green',` military_tech  Դուք շահեցիք  ${20 * bidDefault}`)
+      }else if (localStorage.getItem('i') >= '6' ) {
+        alertInfo('green',` military_tech  Դուք շահեցիք  ${40 * bidDefault}`)
+      }else if (localStorage.getItem('i') >= '7' ) {
+        alertInfo('green',` military_tech  Դուք շահեցիք  ${80 * bidDefault}`)
+      }else if (localStorage.getItem('i') >= '8' ) {
+        alertInfo('green',` military_tech  Դուք շահեցիք  ${160 * bidDefault}`)
       }
   },[selectedNumAddCurrentBet])
 
@@ -54,7 +64,6 @@ function App() {
     <div className="App">
       <div className='console'>
       <h1 id='alerInfo' className='alert_lose material-symbols-outlined'> </h1>
-        <h1 className='current_betting_h1'>Ընթացիկ խաղադրույք</h1>
         <div className='betting_console_conteiner' >
           <ul className='current_betting_ul' id='selctedUl'>{selectedNumAddCurrentBet}</ul>
         </div>

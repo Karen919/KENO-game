@@ -4,33 +4,13 @@
     background-color: rgba(0, 0, 0, 0.589);
     color: aliceblue;
     border-radius: 30px;
-    /* margin: 20px; */
     padding: 10px;
     overflow: hidden;
  }
 
-.current_betting_h1 {
-    padding: 7px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: large;
-    border-radius: 10px;
-    color: rgb(75, 188, 73);
-    position: relative;
-    top: -160px;
-
-}
-
 .current_betting_ul {
     display: flex;
     justify-content: space-between;
-    /* background-color: rgb(51, 46, 46);
-    color: aliceblue;
-    margin: 8px;
-    border-radius: 10px;
-    border-radius: 2px solid rgb(51, 50, 50);
-    padding: 6px; */
     position: relative;
     top: -160px;
 }
@@ -68,14 +48,6 @@
   'opsz' 88,
 }
 
-.coin {
-    text-align: center;
-    padding: 20px;
-    color: green;
-    font-size: xx-large;
-    font-weight: bold;
-}
-
 .betting_console_conteiner {
     background-color: rgb(51, 46, 46);
     color: aliceblue;
@@ -94,7 +66,52 @@
     padding: 70px;
     width: 560px;
     position: relative;
-    font-size: large;
+    font-size: 13px;
     border-radius: 20px;
     z-index: 3;
 }
+
+@media (max-width:480px) {
+    .console {
+        width: 400px;
+        height: 80px;
+        padding: 5px;
+        border-radius: 15px;
+
+    }
+    .current_betting_ul {
+        position: relative;
+        top: -120px;
+    }
+
+    
+    .alert_lose {
+        left: 540px;
+        top: -19px;
+        padding: 50px;
+        width: 500px;
+        position: relative;
+    }
+}
+@media (max-width:360px) {
+    .console {
+        width: 330px;
+        height: 80px;
+        padding: 5px;
+        border-radius: 15px;
+
+    }
+}
+
+
+@media (max-width:320px) {
+    .console {
+        width: 300px;
+        height: 80px;
+        padding: 5px;
+        border-radius: 15px;
+
+    }
+}
+
+

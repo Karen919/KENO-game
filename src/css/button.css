@@ -18,6 +18,30 @@
     border-radius: 10px;
 }
 
+@media (max-width:480px ){
+    .glow-on-hover {
+        width: 34px;
+        height: 34px;
+        margin: 2px;
+        font-size: x-large;
+    }
+}
+@media (max-width:360px ){
+    .glow-on-hover {
+        width: 32px;
+        height: 32px;
+        margin: 2px;
+        font-size: large;
+    }
+}
+
+@media (max-width:320px) {
+    .glow-on-hover{
+        width: 30px;
+        height: 30px;
+    }
+}
+
 .glow-on-hover:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);

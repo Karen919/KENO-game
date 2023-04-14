@@ -1,4 +1,4 @@
-html {
+  html {
     box-sizing: border-box;
   }
   *, *:before, *:after {
@@ -24,8 +24,8 @@ html {
       font: inherit;
       vertical-align: baseline;
   }
-  /* HTML5 display-role reset for older browsers */
-  article, aside, details, figcaption, figure, 
+  HTML5 display-role reset for older browsers
+   article, aside, details, figcaption, figure, 
   footer, header, hgroup, menu, nav, section {
       display: block;
   }
@@ -47,4 +47,4 @@ html {
       border-collapse: collapse;
       border-spacing: 0;
   }
-    
+     
