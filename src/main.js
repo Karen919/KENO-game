@@ -63,7 +63,7 @@ function Main() {
   },[selectedNumAddCurrentBet])
 
   return (
-    <div className="App">
+    <div className="">
       <div className='console'>
       <h1 id='alerInfo' className='alert_lose material-symbols-outlined'> </h1>
         <div className='betting_console_conteiner' >

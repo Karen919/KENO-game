@@ -1,0 +1,153 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.head {
+    background: url(../img/gameLogo8.png);
+    background-color: rgba(0, 0, 0, 0.544);
+    border-radius: 15px;
+    width: 350px;
+    height: 110px;
+    background-size: cover;
+}
+.bg1 {
+    background: url(../img/bg1.png);
+    background-size: cover;
+    padding: 10px;
+
+}
+.bg2 {
+    background: url(../img/bg2.png);
+    background-size: cover;
+    padding: 10px;
+
+}
+.bg3 {
+    background: url(../img/bg3.png);
+    background-size: cover;
+    padding: 10px;
+
+}
+.bg4 {
+    background: url(../img/carl-raw-o59Gt5O4QZ4-unsplash.jpg);
+    background-size: cover;
+    padding: 10px;
+
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.544);
+    border-radius: 15px;
+    width: 350px;
+    height: 110px;
+    color: aliceblue;
+    padding: 10px;
+}
+
+.recuest_urerName {
+    background-color: rgb(27, 26, 26);
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    border-radius: 30px;
+    top: 0; 
+    left: 0;
+    right: 0; 
+    bottom: 0; 
+    margin: auto;
+    animation-name: form;
+    animation-duration: 3s;
+}
+
+@keyframes form {
+    0%{
+        transform: scale(0);
+    }100%{
+        transform: scale(1);
+    }
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+}
+input {
+    margin: 9px;
+}
+
+.submit {
+    background-color: rgb(0, 129, 0);
+    border: none;
+    width: 120px;
+    height: 40px;
+    border-radius: 13px;
+
+}
+
+
+ .material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 28,;
+  cursor: pointer;
+
+
+} 
+
+.username {
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    border-bottom: 0.1px solid rgba(238, 238, 238, 0.64);
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    left: -15px;
+    top: 4px;
+}
+
+#info_mode {
+    display: none;
+}
+.settings {
+    text-align: center;
+}
+.info {
+    display: flex;
+    align-items: start;
+    margin: 2px;
+}
+.mode {
+    display: flex;
+    align-items: start;
+    margin: 2px;
+}
+
+.kanon {
+    font-size: medium;
+}
+
+.rules {
+    background-color: rgba(0, 0, 0, 0.888);
+    border-radius: 15px;
+    margin-top: 25px;
+    padding: 15px;
+    display: none;
+}
+p {
+}
+
+
+
