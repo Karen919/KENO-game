@@ -37,11 +37,14 @@ function App() {
       SetBox(numbersBoxs.map((value,index)=>{
         return <li key={index} className='num_li' onClick={ (event) => {x++; x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է 8')}}>
           {value}</li>;}))
-      setStart(<button className="start_btn" id='start' onClick={addBet}>START</button> )
+      setStart(<button className="start_btn" id='start' onClick={addBet} >START</button> )
       document.getElementById('alerInfo').style.transform = 'translateX(0px)'
     },8000);
-  SetBox(numbersBoxs.map( (value, index) => uniqueNumbers.some(num=> num === value) ? < li key={index} className='glow-on-hover'>{value}</li> : < li key={index} className='reset_num_li' >{value}</li>));
+  
+    SetBox(numbersBoxs.map( (value, index) => uniqueNumbers.some(num=> num === value) ? < li key={index} className='glow-on-hover'>{value}</li> : < li key={index} className='reset_num_li' >{value}</li>));
+  
   setSelectedNumAddCurrentBet(selcetedSliece.map( (value,index) => winingNumbers.some(num => num === value) ? <li key={index} className='glow-on-hover' >{value}</li> : <li key={index} className='reset_num_li' >{value}</li>))};
+  
   useEffect(()=>{
     if ( localStorage.getItem('i') < '3' ) {
       alertInfo('#1C2833','Կրկին Փորձել')
