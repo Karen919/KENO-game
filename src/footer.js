@@ -5,8 +5,8 @@ function Footer() {
     const [name, setName] = useState("");
     let x = true;
     let y = true;
-    const bg = ['bg1', 'bg2', 'bg3', 'bg4'];
-    let z = 0;
+    // const bg = ['bg1', 'bg2', 'bg3', 'bg4'];
+    // let z = 0;
     function handleSubmit(event) {
         event.preventDefault();
         const username = event.target.username.value;
@@ -21,10 +21,10 @@ function Footer() {
             document.getElementById("rules").style.display = 'none' 
     }
 
-    function toggleMode() {
-        document.getElementById('body').className = bg[z];
-        z === 4 ? z = 0 : z++
-    }
+    // function toggleMode() {
+    //     // document.getElementById('body').className = bg[z];
+    //     z === 4 ? z = 0 : z++
+    // }
 
     function toggleRules () {
         y ? y = false : y = true;
@@ -42,7 +42,7 @@ function Footer() {
         <div id="info_mode">
                 <div className="settings">կարգավորումներ</div>
                 <div className=" material-symbols-outlined info"  onClick={toggleRules}>info <span className="kanon">-կանոններ</span></div>
-                <div className=" material-symbols-outlined mode" onClick={toggleMode}>auto_mode <span className="kanon">-ռեժիմ</span></div>
+                <div className=" material-symbols-outlined mode">auto_mode <span className="kanon">-ռեժիմ</span></div>
             </div>
         </div>
         <div className="rules" id="rules">
