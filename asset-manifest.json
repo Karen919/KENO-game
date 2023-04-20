@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/KENO-game-react/static/css/main.2223bfd4.css",
-    "main.js": "/KENO-game-react/static/js/main.0ca716cb.js",
+    "main.css": "/KENO-game-react/static/css/main.44ddbdad.css",
+    "main.js": "/KENO-game-react/static/js/main.f93fef35.js",
     "static/js/787.03193a3d.chunk.js": "/KENO-game-react/static/js/787.03193a3d.chunk.js",
+    "static/media/bg1.png": "/KENO-game-react/static/media/bg1.db7815d909f330a89d5e.png",
+    "static/media/bg3.png": "/KENO-game-react/static/media/bg3.75b7de9574d8ff9c738f.png",
+    "static/media/bg2.png": "/KENO-game-react/static/media/bg2.56ba50a1905e8a71c043.png",
     "static/media/carl-raw-o59Gt5O4QZ4-unsplash.jpg": "/KENO-game-react/static/media/carl-raw-o59Gt5O4QZ4-unsplash.fd71beea6c952a9a4db4.jpg",
+    "static/media/gameLogo8.png": "/KENO-game-react/static/media/gameLogo8.3af25b5bcf3eddbe53de.png",
     "index.html": "/KENO-game-react/index.html",
-    "main.2223bfd4.css.map": "/KENO-game-react/static/css/main.2223bfd4.css.map",
-    "main.0ca716cb.js.map": "/KENO-game-react/static/js/main.0ca716cb.js.map",
+    "main.44ddbdad.css.map": "/KENO-game-react/static/css/main.44ddbdad.css.map",
+    "main.f93fef35.js.map": "/KENO-game-react/static/js/main.f93fef35.js.map",
     "787.03193a3d.chunk.js.map": "/KENO-game-react/static/js/787.03193a3d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2223bfd4.css",
-    "static/js/main.0ca716cb.js"
+    "static/css/main.44ddbdad.css",
+    "static/js/main.f93fef35.js"
   ]
 }
