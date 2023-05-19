@@ -2,18 +2,18 @@
 import { useState } from "react";
 
 function Footer() {
-    const [name, setName] = useState("");
+    // const [name, setName] = useState("");
     let x = true;
     let y = true;
     const bg = ['bg1', 'bg2', 'bg3', 'bg4'];
     let z = 0;
-    function handleSubmit(event) {
-        event.preventDefault();
-        const username = event.target.username.value;
-        sessionStorage.setItem("username", username);
-        setName(username.toUpperCase().trim());
-        document.getElementById('recuest_urerName').style.display = 'none'
-    }
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+    //     const username = event.target.username.value;
+    //     sessionStorage.setItem("username", username);
+    //     setName(username.toUpperCase().trim());
+    //     document.getElementById('recuest_urerName').style.display = 'none'
+    // }
     function toggleInfoMode () {
         x ? x = false : x = true
         x ? document.getElementById("info_mode").style.display = 'none' :
@@ -34,39 +34,39 @@ function Footer() {
     <footer className="footer" id="footer">
         <div>
             <div className="username">
-            <span>{name}</span>
+            {/* <span>{name}</span> */}
             <span className=" material-symbols-outlined" onClick={toggleInfoMode}>
                 settings
             </span>
         </div>
         <div id="info_mode">
-                <div className="settings">կարգավորումներ</div>
-                <div className=" material-symbols-outlined info"  onClick={toggleRules}>info <span className="kanon">-կանոններ</span></div>
-                <div className=" material-symbols-outlined mode" onClick={toggleMode}>auto_mode <span className="kanon">-ռեժիմ</span></div>
+                <div className="settings">Settings</div>
+                <div className=" material-symbols-outlined info"  onClick={toggleRules}>info <span className="kanon"></span></div>
+                <div className=" material-symbols-outlined mode" onClick={toggleMode}>auto_mode <span className="kanon"></span></div>
             </div>
         </div>
         <div className="rules" id="rules">
-            <p>«Կենո» խաղը խաղացողին հնարավորություն է տալիս է խաղադրույք կատարել 1-80 համարակալված դաշտերից,  1-ից մինչև 8-ը  համարակալված դաշտերի համակցություն ընտրելու միջոցով:</p>
-            <p>Յուրաքանչյուր խաղափուլի ժամանակ պատահական թվերի գեներատորի հիման վրա խաղարկվում են 1-ից 80-ը հերթականությամբ համարակալված գնդակներից 20-ը:</p>
-            <p>Խաղափուլի ընթացքում դուրս եկող և խաղացողի կողմից ընտրված թվերի հետ համընկնող դաշտերը գունավորվում են վերևում:</p>
-            <ul>
-                <li>3 թիվից պակաս համընկնելու դեպքում խաղացողը պարտվում է </li>
-                <li>3 թիվ համընկնելու դեպքում խաղադրույքը բազմապատկվում է — 5 անգամ </li>
-                <li>4 թիվ համընկնելու դեպքում խաղադրույքը բազմապատկվում է — 10 անգամ </li>
-                <li>5 թիվ համընկնելու դեպքում խաղադրույքը բազմապատկվում է — 20 անգամ </li>
-                <li>6 թիվ համընկնելու դեպքում խաղադրույքը բազմապատկվում է — 40 անգամ </li>
-                <li>7 թիվ համընկնելու դեպքում խաղադրույքը բազմապատկվում է — 80 անգամ </li>
-                <li>8 թիվ համընկնելու դեպքում խաղադրույքը բազմապատկվում է — 160 անգամ </li>
-            </ul>
+        <p>The "Keno" game allows the player to select numbers from 1 to 80 among the available fields numbered from 1 to 8.</p>
+        <p>During each game round, 20 random numbers are drawn from the numbers 1 to 80, which are numbered sequentially based on the random number generator.</p>
+        <p>In the course of the game round, the fields selected by the player and the numbers drawn are highlighted above.</p>
+        <ul>
+            <li>If the player matches less than 3 numbers, they lose.</li>
+            <li>If the player matches 3 numbers, the payout is multiplied by 5.</li>
+            <li>If the player matches 4 numbers, the payout is multiplied by 10.</li>
+            <li>If the player matches 5 numbers, the payout is multiplied by 20.</li>
+            <li>If the player matches 6 numbers, the payout is multiplied by 40.</li>
+            <li>If the player matches 7 numbers, the payout is multiplied by 80.</li>
+            <li>If the player matches 8 numbers, the payout is multiplied by 160.</li>
+        </ul>
         </div>
-        <div className="recuest_urerName" id="recuest_urerName">
+        {/* <div className="recuest_urerName" id="recuest_urerName">
         <div className="material-symbols-outlined close" onClick={()=>{ document.getElementById('recuest_urerName').style.display = 'none'}}>close</div>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input type="text" id="username" name="username" />
                 <input type="submit" value="Submit" className="submit" />
             </form>
-        </div>
+        </div> */}
     </footer>
     );
 }

@@ -9,7 +9,7 @@ function Main() {
   const [start,setStart] =useState(<button className="start_btn" id='start' onClick={addBet} >START</button> );
   const [bidDefault, setBidDefault] = useState(0);
   const [selectedNumAddCurrentBet,setSelectedNumAddCurrentBet]=  useState();
-  const [box,SetBox] = useState(numbersBoxs.map((value,index)=> <li key={index} className='num_li'  onClick={ (event) => {x++;x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է 8')} }>{value}</li>))
+  const [box,SetBox] = useState(numbersBoxs.map((value,index)=> <li key={index} className='num_li'  onClick={ (event) => {x++;x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning The maximum number is 8')} }>{value}</li>))
   function alertInfo (color, text) {
     document.getElementById('alerInfo').style.background = color
     document.getElementById('alerInfo').style.transform = 'translateX(-550px)';
@@ -34,7 +34,7 @@ function Main() {
   setTimeout(()=>{
       setSelectedNumAddCurrentBet()
       SetBox(numbersBoxs.map((value,index)=>{
-        return <li key={index} className='num_li' onClick={ (event) => {x++; x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning Առավելագույն քանակն է 8')}}>
+        return <li key={index} className='num_li' onClick={ (event) => {x++; x < 9 ? event.target.className='click_num_li' : alertInfo('#A93226','warning The maximum number is 8')}}>
           {value}</li>;}))
       setStart(<button className="start_btn" id='start' onClick={addBet} >START</button> )
       document.getElementById('alerInfo').style.transform = 'translateX(0px)'
@@ -44,23 +44,24 @@ function Main() {
   
   setSelectedNumAddCurrentBet(selcetedSliece.map( (value,index) => winingNumbers.some(num => num === value) ? <li key={index} className='glow-on-hover' >{value}</li> : <li key={index} className='reset_num_li' >{value}</li>))};
   
-  useEffect(()=>{
-    if ( localStorage.getItem('i') < '3' ) {
-      alertInfo('#1C2833','Կրկին Փորձել')
-      } else if (localStorage.getItem('i') >= '3' ) {
-        alertInfo('green',` military_tech  Դուք շահեցիք  ${5 * bidDefault}`)
-      }else if (localStorage.getItem('i') >= '4' ) {
-        alertInfo('green',` military_tech  Դուք շահեցիք  ${10 * bidDefault}`)
-      }else if (localStorage.getItem('i') >= '5' ) {
-        alertInfo('green',` military_tech  Դուք շահեցիք  ${20 * bidDefault}`)
-      }else if (localStorage.getItem('i') >= '6' ) {
-        alertInfo('green',` military_tech  Դուք շահեցիք  ${40 * bidDefault}`)
-      }else if (localStorage.getItem('i') >= '7' ) {
-        alertInfo('green',` military_tech  Դուք շահեցիք  ${80 * bidDefault}`)
-      }else if (localStorage.getItem('i') >= '8' ) {
-        alertInfo('green',` military_tech  Դուք շահեցիք  ${160 * bidDefault}`)
-      }
-  },[selectedNumAddCurrentBet])
+
+  useEffect(() => {
+    if (localStorage.getItem('i') < '3') {
+      alertInfo('#1C2833', ' Try Again');
+    } else if (localStorage.getItem('i') >= '3') {
+      alertInfo('green', `Congratulations! You won ${5 * bidDefault}`);
+    } else if (localStorage.getItem('i') >= '4') {
+      alertInfo('green', `Congratulations! You won ${10 * bidDefault}`);
+    } else if (localStorage.getItem('i') >= '5') {
+      alertInfo('green', `Congratulations! You won ${20 * bidDefault}`);
+    } else if (localStorage.getItem('i') >= '6') {
+      alertInfo('green', `Congratulations! You won ${40 * bidDefault}`);
+    } else if (localStorage.getItem('i') >= '7') {
+      alertInfo('green', `Congratulations! You won ${80 * bidDefault}`);
+    } else if (localStorage.getItem('i') >= '8') {
+      alertInfo('green', `Congratulations! You won ${160 * bidDefault}`);
+    }
+  }, [selectedNumAddCurrentBet]);
 
   return (
     <div className="">
